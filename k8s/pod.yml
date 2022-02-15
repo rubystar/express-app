@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: express-hello
+  labels:
+    environment: dev
+    app: express-hello
+spec:
+  containers:
+  - name: express-hello
+    image: express-hello:1.0
+    ports:
+    - containerPort: 3000
+    imagePullPolicy: IfNotPresent

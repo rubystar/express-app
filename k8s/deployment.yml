@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-hello-deployment
+  labels:
+    app: express-hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: express-hello-app
+  template:
+    metadata:
+      labels:
+        app: express-hello-app
+    spec:
+      containers:
+      - name: express-hello
+        image: express-hello:1.0
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: IfNotPresent

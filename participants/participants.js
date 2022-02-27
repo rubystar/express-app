@@ -41,4 +41,14 @@ router.get('/:id', async (req, res) => {
   res.send(result[0]);
 })
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const result = await participantRepo.deleteParticipantById(req.params.id);
+    res.sendStatus(204)
+  } catch (error) {
+    res.status(400);
+    res.send(error.code);
+  }
+})
+
 module.exports = router

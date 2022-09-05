@@ -15,8 +15,8 @@ spec:
         app: express-hello-app
     spec:
       containers:
-      - name: express-hello
-        image: express-hello:1.0
-        ports:
-        - containerPort: 3000
-        imagePullPolicy: IfNotPresent
+        - name: express-hello
+          image: express-hello:2.0
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Never
